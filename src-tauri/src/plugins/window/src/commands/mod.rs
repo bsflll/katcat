@@ -2,6 +2,7 @@ use tauri::{AppHandle, Manager, Runtime, WebviewWindow, async_runtime::spawn};
 
 pub static MAIN_WINDOW_LABEL: &str = "main";
 pub static PREFERENCE_WINDOW_LABEL: &str = "preference";
+pub static CHAT_WINDOW_LABEL: &str = "chat";
 
 #[cfg(target_os = "macos")]
 mod macos;
@@ -49,6 +50,29 @@ pub fn show_main_window(app_handle: &AppHandle) {
 
 pub fn show_preference_window(app_handle: &AppHandle) {
     show_window_by_label(app_handle, PREFERENCE_WINDOW_LABEL);
+}
+
+pub fn show_chat_window(app_handle: &AppHandle) {
+    show_window_by_label(app_handle, CHAT_WINDOW_LABEL);
+}
+
+pub fn hide_chat_window(app_handle: &AppHandle) {
+    if let Some(window) = app_handle.get_webview_window(CHAT_WINDOW_LABEL) {
+        let _ = window.hide();
+    }
+}
+
+pub fn toggle_chat_window(app_handle: &AppHandle) {
+    if let Some(window) = app_handle.get_webview_window(CHAT_WINDOW_LABEL) {
+        if window.is_visible().unwrap_or(false) {
+            let _ = window.hide();
+        } else {
+            let app_handle_clone = app_handle.clone();
+            spawn(async move {
+                show_window(app_handle_clone, window).await;
+            });
+        }
+    }
 }
 
 fn show_window_by_label(app_handle: &AppHandle, label: &str) {

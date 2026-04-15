@@ -103,6 +103,7 @@
       "shortcut": {
         "title": "快捷键",
         "labels": {
+          "toggleChat": "显示/隐藏聊天",
           "toggleCat": "打开猫咪",
           "togglePreferences": "打开偏好设置",
           "mirrorMode": "镜像模式",
@@ -110,6 +111,7 @@
           "alwaysOnTop": "窗口置顶"
         },
         "hints": {
+          "toggleChat": "切换聊天窗口的显示与隐藏。",
           "toggleCat": "切换猫咪窗口的显示与隐藏。",
           "togglePreferences": "切换偏好设置窗口的显示与隐藏。",
           "mirrorMode": "切换猫咪的镜像模式。",

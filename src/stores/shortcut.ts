@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-export type HotKey = 'visibleCat' | 'mirrorMode' | 'penetrable' | 'alwaysOnTop'
+export type HotKey = 'visibleCat' | 'visibleChat' | 'mirrorMode' | 'penetrable' | 'alwaysOnTop'
 
 export const useShortcutStore = defineStore('shortcut', () => {
   const visibleCat = ref('')
+  const visibleChat = ref('CommandOrControl+Shift+K')
   const visiblePreference = ref('')
   const mirrorMode = ref('')
   const penetrable = ref('')
@@ -12,6 +13,7 @@ export const useShortcutStore = defineStore('shortcut', () => {
 
   return {
     visibleCat,
+    visibleChat,
     visiblePreference,
     mirrorMode,
     penetrable,

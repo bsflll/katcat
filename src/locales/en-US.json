@@ -103,6 +103,7 @@
       "shortcut": {
         "title": "Shortcuts",
         "labels": {
+          "toggleChat": "Toggle Chat",
           "toggleCat": "Toggle Cat",
           "togglePreferences": "Toggle Preferences",
           "mirrorMode": "Mirror Mode",
@@ -110,6 +111,7 @@
           "alwaysOnTop": "Always on Top"
         },
         "hints": {
+          "toggleChat": "Toggle the visibility of the chat window.",
           "toggleCat": "Toggle the visibility of the cat window.",
           "togglePreferences": "Toggle the visibility of the preferences window.",
           "mirrorMode": "Toggle the cat's mirror mode.",

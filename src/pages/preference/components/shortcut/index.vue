@@ -11,11 +11,15 @@ import { useCatStore } from '@/stores/cat'
 import { useShortcutStore } from '@/stores/shortcut.ts'
 
 const shortcutStore = useShortcutStore()
-const { visibleCat, visiblePreference, mirrorMode, penetrable, alwaysOnTop } = storeToRefs(shortcutStore)
+const { visibleCat, visibleChat, visiblePreference, mirrorMode, penetrable, alwaysOnTop } = storeToRefs(shortcutStore)
 const catStore = useCatStore()
 
 useKeyPress(visibleCat, () => {
   catStore.window.visible = !catStore.window.visible
+})
+
+useKeyPress(visibleChat, () => {
+  toggleWindowVisible(WINDOW_LABEL.CHAT)
 })
 
 useKeyPress(visiblePreference, () => {
@@ -37,6 +41,13 @@ useKeyPress(alwaysOnTop, () => {
 
 <template>
   <ProList :title="$t('pages.preference.shortcut.title')">
+    <ProListItem
+      :description="$t('pages.preference.shortcut.hints.toggleChat')"
+      :title="$t('pages.preference.shortcut.labels.toggleChat')"
+    >
+      <Shortcut v-model="shortcutStore.visibleChat" />
+    </ProListItem>
+
     <ProListItem
       :description="$t('pages.preference.shortcut.hints.toggleCat')"
       :title="$t('pages.preference.shortcut.labels.toggleCat')"
