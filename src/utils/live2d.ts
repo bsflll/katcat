@@ -100,8 +100,8 @@ class Live2d {
 
     this.model.scale.set(scale)
     this.model.x = innerWidth / 2
-    this.model.y = innerHeight * 0.6  // offset down to show cat head
-    this.model.anchor.set(0.5)
+    this.model.y = innerHeight * 0.75  // offset further down to show cat head
+    this.model.anchor.set(0.5, 0.7)  // anchor higher on model
   }
 
   public startMotion(motion: MotionInfo) {
