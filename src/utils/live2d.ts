@@ -100,7 +100,7 @@ class Live2d {
 
     this.model.scale.set(scale)
     this.model.x = innerWidth / 2
-    this.model.y = innerHeight / 2
+    this.model.y = innerHeight * 0.6  // offset down to show cat head
     this.model.anchor.set(0.5)
   }
 
