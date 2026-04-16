@@ -98,10 +98,10 @@ class Live2d {
     const scaleY = innerHeight / height
     const scale = Math.min(scaleX, scaleY)
 
-    this.model.scale.set(scale)
+    this.model.scale.set(scale * 0.6)  // smaller cat to ensure it fits
     this.model.x = innerWidth / 2
-    this.model.y = innerHeight * 0.75  // offset further down to show cat head
-    this.model.anchor.set(0.5, 0.7)  // anchor higher on model
+    this.model.y = innerHeight * 0.8  // position near bottom
+    this.model.anchor.set(0.5, 0.8)  // anchor near bottom of model
   }
 
   public startMotion(motion: MotionInfo) {
