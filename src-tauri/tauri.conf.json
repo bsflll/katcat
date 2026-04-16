@@ -16,6 +16,8 @@
         "label": "main",
         "title": "KatCat",
         "url": "index.html/#/",
+        "width": 500,
+        "height": 500,
         "shadow": false,
         "alwaysOnTop": true,
         "transparent": true,
